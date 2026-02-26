@@ -1,4 +1,10 @@
 steps:
+  - command: echo "skip checkout"
+    label: "skip checkout"
+    plugins:
+      - custom-checkout#v1.6.0:
+          skip_checkout: true
+
   - label: ":hammer: Example Script"
     command: "script.sh"
     artifact_paths: "artifacts/*"
