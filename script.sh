@@ -5,6 +5,8 @@ echo "--- :package: Build job checkout directory"
 pwd
 ls -la
 
+sleep 600
+
 
 echo "--- :evergreen_tree: Build job environment"
 
