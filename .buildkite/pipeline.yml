@@ -1,4 +1,6 @@
 steps:
   - label: ":hammer: Example Script"
-    command: "script.sh"
+    commands:
+      - "git --no-pager log -1 HEAD -s --no-color --format='commit %H%nabbrev-commit %h%nAuthor: %an <%ae>%n%n%w(0,4,4)%B' | buildkite-agent meta-data set 'buildkite:git:commit'"
+      - "./script.sh"
     artifact_paths: "artifacts/*"
