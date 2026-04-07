@@ -1,4 +1,12 @@
 steps:
-  - label: ":hammer: Example Script"
-    command: "script.sh"
-    artifact_paths: "artifacts/*"
+  - if: "build.pull_request.repository.fork" # Needs to not evaluate so step is skipped
+    block: ":wave:"
+    prompt: "Hello?"
+    blocked_state: "running"
+
+  - label: ":pipeline:"
+    key: "should-not-run"
+    agents:
+      queue: hosted
+    command:
+      - "echo hello world"
