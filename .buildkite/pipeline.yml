@@ -3,5 +3,5 @@ steps:
     agents:
       queue: hosted
     commands:
-      - "sleep 60"
+      - "sleep 600"
       - "echo hello world"
