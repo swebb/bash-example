@@ -1,12 +1,7 @@
 steps:
-  - if: "build.pull_request.repository.fork" # Needs to not evaluate so step is skipped
-    block: ":wave:"
-    prompt: "Hello?"
-    blocked_state: "running"
-
   - label: ":pipeline:"
-    key: "should-not-run"
     agents:
       queue: hosted
-    command:
+    commands:
+      - "sleep 60"
       - "echo hello world"
